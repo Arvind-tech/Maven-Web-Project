@@ -14,7 +14,7 @@ pipeline {
                          agent {docker { image 'docker.io/library/docker:18.09.7'}}                                                         
                      steps{
                         script{                              
-                          sh 'docker build --nocache -f Dockerfile .'
+                          sh 'docker build -t Dockerfile .'
                                }           
                           
                          }
