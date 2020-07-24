@@ -5,7 +5,7 @@ pipeline {
                          agent {docker { image 'docker.io/library/maven:latest'}}                                                         
                      steps{
                         script{                              
-                          sh "mvn clean package"
+                          sh "mvn --version"
                                }           
                           
                          }
