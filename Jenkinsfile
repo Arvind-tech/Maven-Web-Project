@@ -3,7 +3,7 @@ pipeline {
              stages{             
                   stage('maven build'){ 
                          agent { docker { 
-                                image 'image 'maven:3-alpine'
+                                image 'maven:3-alpine'
                                 label 'jenkins-docker-maven'
                          }}
                      steps{
