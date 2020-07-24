@@ -10,11 +10,11 @@ pipeline {
                           
                          }
                    }
-                  stage('docker version'){ 
+                  stage('docker build'){ 
                          agent {docker { image 'docker.io/library/docker:18.09.7'}}                                                         
                      steps{
                         script{                              
-                          sh "docker version"
+                          sh 'docker build --nocache -f Dockerfile .'
                                }           
                           
                          }
