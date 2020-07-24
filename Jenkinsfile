@@ -1,5 +1,5 @@
 pipeline {
-       agent {label "jenkins-docker-maven"}
+       agent {label "jenkins-docker-slave"}
              stages{             
                   stage('maven build'){ 
                          agent { docker { 
