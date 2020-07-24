@@ -1,10 +1,10 @@
 pipeline {
-       agent any
+       agent {label "jenkins-docker-slave"}
              stages{
                   stage('maven version'){
                      steps{
                         script{
-                          sh "mvn --version"
+                          sh "mvn clean package"
                           }
                          }
                    }
