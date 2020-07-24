@@ -1,14 +1,16 @@
 pipeline {
-       agent none
+       agent {label "jenkins-docker-maven"}
              stages{             
                   stage('maven build'){ 
-                         agent {label "jenkins-docker-slave"}
+                         agent { docker { 
+                                image 'docker.io/library/maven:latest'
+                                label 'jenkins-docker-maven'
+                         }}
                      steps{
-                        script{
-                               container('jenkins-docker-maven') {
+                        script{                              
                           sh "mvn clean package"
                                }           
-                          }
+                          
                          }
                    }
 }
