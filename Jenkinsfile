@@ -11,7 +11,7 @@ pipeline {
                          }
                    }
                   stage('docker build'){ 
-                         agent {docker { image: docker:18.09.7
+                         agent {docker { image 'docker:18.09.7'
                                          command:
                                          - cat
                                          tty: true
