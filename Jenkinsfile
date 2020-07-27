@@ -15,7 +15,7 @@ pipeline {
                      steps{
                         script{  
                           //sh 'docker run -privileged -t -i jpetazzo/dind'     
-                          sh 'docker run -ti -v /var/run/docker.sock:/var/run/docker.sock docker'     
+                          sh 'docker run -t -v /var/run/docker.sock:/var/run/docker.sock docker'     
                           //sh 'dockerd'     
                           //sh 'docker run -d --name dind-rootless --privileged docker:dind-rootless --experimental'   
                           //sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged --name doc -d docker'     
