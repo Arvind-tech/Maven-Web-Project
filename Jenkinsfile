@@ -13,7 +13,7 @@ pipeline {
                   stage('docker build'){                          
                          agent {
                                    docker { 
-                                           image 'docker'
+                                           image 'docker:18.09.7'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'
                             }
                          }
