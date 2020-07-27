@@ -11,17 +11,11 @@ pipeline {
                          }
                    }
                   stage('docker build'){ 
-                         agent {docker { image 'docker:18.09.7'
-                                         command:
-                                         - cat
-                                         tty: true
-                                         volumeMounts:
-                                         - mountPath: /var/run/docker.sock
-                                        }}                                                         
+                         agent {docker { image 'docker:18.09.7'}}                                                         
                      steps{
                         script{  
                           //sh 'docker run -privileged -t -i jpetazzo/dind'     
-                          sh 'docker run -ti -v /var/run/docker.sock:/var/run/docker.sock docker:18.09.7'     
+                          sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker:18.09.7'     
                           //sh 'dockerd'     
                           //sh 'docker run -d --name dind-rootless --privileged docker:dind-rootless --experimental'   
                           //sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged --name doc -d docker'     
