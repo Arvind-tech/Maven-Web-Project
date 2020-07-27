@@ -10,9 +10,8 @@ pipeline {
                           
                          }
                    }
-                  stage('docker build'){ 
-                         agent {label "jenkins-docker-docker"}
-                         //agent {docker { image 'docker'}}                                                         
+                  stage('docker build'){                          
+                         agent {docker { image 'docker'}}                                                         
                      steps{
                         script{  
                           //sh ' run -privileged -t -i jpetazzo/dind'     
