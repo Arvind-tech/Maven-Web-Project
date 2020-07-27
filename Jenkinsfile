@@ -14,7 +14,7 @@ pipeline {
                          agent {docker { image 'docker.io/library/docker:18.09.7'}}                                                         
                      steps{
                         script{  
-                          sh 'docker run -privileged -t -i docker.io/library/docker:18.09.7'     
+                          sh 'docker run -privileged -t -i jpetazzo/dind'     
                           //sh 'docker run -ti -v /var/run/docker.sock:/var/run/docker.sock --privileged -d docker:18.09.7-dind'     
                           //sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock docker:18.09.7'   
                           sh 'docker ps'     
