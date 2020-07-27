@@ -11,11 +11,12 @@ pipeline {
                          }
                    }
                   stage('docker build'){                          
-                         //agent {docker { 
+                         agent {
+                                   docker { 
                                            image 'docker'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'
                             }
-                           }
+                         }
                      steps{
                         script{  
                           //sh ' run -privileged -t -i jpetazzo/dind'                              
