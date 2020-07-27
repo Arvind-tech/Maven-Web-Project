@@ -16,7 +16,7 @@ pipeline {
                         script{  
                           //sh 'docker run -privileged -t -i jpetazzo/dind'     
                           //sh 'docker run -ti -v /var/run/docker.sock:/var/run/docker.sock --privileged -d docker:18.09.7-dind'     
-                          sh 'dockerd'     
+                          //sh 'dockerd'     
                           sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock docker:dind-rootless'   
                           //sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged --name doc -d docker'     
                           sh 'docker ps'     
