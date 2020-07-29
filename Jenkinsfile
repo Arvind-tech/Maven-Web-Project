@@ -13,7 +13,7 @@ pipeline {
                   stage('docker build'){                          
                          agent {
                                    docker { 
-                                           image 'docker:dind'
+                                           containerid 'fe6b30a31c85'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'
                                            //args '-e DOCKER_HOST=unix:///var/run/docker.sock'
                                            
@@ -23,13 +23,13 @@ pipeline {
                         script{  
       
                           sh 'docker version'                                   
-                               sh 'env DOCKER_HOST=tcp://docker:2375'
+                               //sh 'env DOCKER_HOST=tcp://docker:2375'
                           //sh 'docker run --rm -d --privileged docker:dind -e DOCKER_HOST=ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123'     
                           //sh 'docker build -f Dockerfile -t ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0 .'
                           //sh 'docker run --rm -d --privileged docker:dind -e DOCKER_HOST=localhost docker /bin/sh'
                           //sh 'docker build -f Dockerfile -t ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0 .'
                           //sh 'docker exec --tty $(docker ps -ql) /bin/sh'
-                          sh 'docker login -u admin -p admin123 ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123'
+                          //sh 'docker login -u admin -p admin123 ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123'
                           //sh 'docker push ec2-54-191-18-242.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0'     
                                }           
                           
