@@ -13,9 +13,9 @@ pipeline {
                   stage('docker build'){                          
                          agent {
                                    docker { 
-                                           image 'docker:18.09.7'
+                                           image 'docker:dind'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'
-                                           args 'mkdir /.docker'
+                                           
                             }
                          }
                      steps{
