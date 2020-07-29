@@ -15,6 +15,7 @@ pipeline {
                                    docker { 
                                            image 'docker:18.09.7'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'
+                                           args 'mkdir /.docker'
                             }
                          }
                      steps{
