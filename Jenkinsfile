@@ -1,6 +1,6 @@
 pipeline {
-       agent {docker { image 'jenkins/slave'}}
-       stages{             
+       agent {label 'jenkins-docker-slave'}
+              stages{             
                   stage('maven version'){ 
                          agent {docker { image 'maven:latest'}}                                                         
                      steps{
