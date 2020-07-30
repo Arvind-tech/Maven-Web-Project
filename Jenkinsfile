@@ -31,7 +31,8 @@ pipeline {
                                }
                                EOF"
                                
-                            '''                                                               
+                            ''' 
+                           sh 'docker exec --tty $(docker ps -ql) sh -c "ls /etc/docker"'    
                           //sh 'env DOCKER_HOST=tcp://docker:2375'
                           //sh 'docker run --rm -d --privileged docker:dind --names dazzling_gates --insecure-registry ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'                               
                           //sh 'docker run --name dazzling_gates'                          
