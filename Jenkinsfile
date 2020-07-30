@@ -14,8 +14,7 @@ pipeline {
                          agent {
                                    docker { 
                                            image 'docker:dind'
-                                           args '-v /var/run/docker.sock:/var/run/docker.sock'
-                                           args '--entrypoint=/bin/sh'
+                                           args '-v /var/run/docker.sock:/var/run/docker.sock --entrypoint=/bin/sh'                                           
                                            
                             }
                          }
