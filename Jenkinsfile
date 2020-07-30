@@ -25,11 +25,11 @@ pipeline {
                           sh 'docker exec --tty $(docker ps -ql) sh -c "mkdir -p /etc/docker"'   
                           sh '''
                                set +x
-                               docker exec --tty $(docker ps -ql) sh -c "cat <<EOF > /etc/docker/daemon.json"
+                               docker exec --tty $(docker ps -ql) sh -c "cat <<EOF > /etc/docker/daemon.json
                                {
                                            "insecure-registries": ["ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123"]
                                }
-                               EOF
+                               EOF"
                                
                             '''                                                               
                           //sh 'env DOCKER_HOST=tcp://docker:2375'
