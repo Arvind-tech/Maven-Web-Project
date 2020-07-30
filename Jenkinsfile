@@ -13,8 +13,8 @@ pipeline {
                   stage('docker build'){                          
                          agent {
                                    docker { 
-                                           image 'dazzling_gates'
-                                           args '-v /var/run/docker.sock:/var/run/docker.sock'                                           
+                                           image 'docker:dind'
+                                           args '-v /var/run/docker.sock:/var/run/docker.sock --insecure-registry ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'                                           
                                            
                             }
                          }
