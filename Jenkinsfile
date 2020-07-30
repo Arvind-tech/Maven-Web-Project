@@ -13,8 +13,8 @@ pipeline {
                   stage('docker build'){                          
                          agent {
                                    docker { 
-                                           //image 'docker:dind'
-                                           args '-v /var/run/docker.sock:/var/run/docker.sock --name dazzling_gates'                                           
+                                           image 'd5d139be840a'
+                                           args '-v /var/run/docker.sock:/var/run/docker.sock'                                           
                                            
                             }
                          }
