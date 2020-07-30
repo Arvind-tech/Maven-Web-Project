@@ -23,7 +23,7 @@ pipeline {
                         script{  
       
                           sh 'docker version'  
-                          sh 'cat /etc/docker'     
+                          sh 'ls /etc/docker'     
                                //sh 'env DOCKER_HOST=tcp://docker:2375'
                           //sh 'docker run --rm -d --privileged docker:dind -e DOCKER_HOST=ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123'     
                           //sh 'docker build -f Dockerfile -t ec2-34-222-104-216.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0 .'
