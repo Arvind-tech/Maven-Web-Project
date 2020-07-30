@@ -21,7 +21,14 @@ pipeline {
                      steps{                            
                         script{  
       
-                          sh 'docker version'  
+                          sh 'docker version' 
+                          sh '''
+                          docker exec -t $(docker ps -ql) bash -c "cat <<EOF > /etc/docker/daemon.json
+                                   {
+                                           "insecure-registries": ["ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123"]
+                                   }
+                                   EOF
+                              '''     
                                
                                //sh 'env DOCKER_HOST=tcp://docker:2375'
                           //sh 'docker run --rm -d --privileged docker:dind --names dazzling_gates --insecure-registry ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'                               
