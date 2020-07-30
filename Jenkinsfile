@@ -22,8 +22,8 @@ pipeline {
                         script{  
       
                           //sh 'docker version' 
-                            sh 'docker exec --tty $(docker ps -ql) sh -c "mkdir -p /etc/docker"'   
-                          /*sh '''
+                          sh 'docker exec --tty $(docker ps -ql) sh -c "mkdir -p /etc/docker"'   
+                          sh '''
                                set +x
                                docker exec --tty $(docker ps -ql) sh -c "cat <<EOF > /etc/docker/daemon.json"
                                {
@@ -31,16 +31,14 @@ pipeline {
                                }
                                EOF
                                
-                            '''    
-                            */
-                               
-                               //sh 'env DOCKER_HOST=tcp://docker:2375'
+                            '''                                                               
+                          //sh 'env DOCKER_HOST=tcp://docker:2375'
                           //sh 'docker run --rm -d --privileged docker:dind --names dazzling_gates --insecure-registry ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'                               
                           //sh 'docker run --name dazzling_gates'                          
                           //sh 'docker build -f Dockerfile -t ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0 .'                          
                           //sh 'docker exec $(docker ps -ql)'
                           //sh 'ls /etc/docker'     
-                          sh 'docker login -u admin -p admin123 ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'
+                          //sh 'docker login -u admin -p admin123 ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'
                           //sh 'docker push ec2-54-191-18-242.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0'     
                                }           
                           
