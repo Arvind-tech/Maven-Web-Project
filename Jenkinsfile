@@ -21,9 +21,9 @@ pipeline {
                      steps{                            
                         script{  
       
-                          //sh 'docker version'
-                          set+x
+                          //sh 'docker version'                          
                           sh '''
+                               set +x
                                docker exec -t $(docker ps -ql) bash -c "cat <<EOF > /etc/docker/daemon.json
                                {
                                            "insecure-registries": ["ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123"]
