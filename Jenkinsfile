@@ -14,7 +14,7 @@ pipeline {
                          agent {
                                    docker { 
                                            image 'docker:dind'
-                                           args '-v /var/run/docker.sock:/var/run/docker.sock'                                           
+                                           args '-v /var/run/docker.sock:/var/run/docker.sock --name dazzling_gates'                                           
                                            
                             }
                          }
@@ -25,7 +25,7 @@ pipeline {
                                
                                //sh 'env DOCKER_HOST=tcp://docker:2375'
                           //sh 'docker run --rm -d --privileged docker:dind --names dazzling_gates --insecure-registry ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123'                               
-                          //sh 'docker run --rm -d --privileged docker:dind --name Arvind'                          
+                          //sh 'docker run --name dazzling_gates'                          
                           //sh 'docker build -f Dockerfile -t ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123/ubuntu:3.0.0 .'                          
                          // sh 'docker restart $(docker ps -ql)'
                           //sh 'ls /etc/docker'     
