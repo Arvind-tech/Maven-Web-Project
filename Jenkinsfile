@@ -13,7 +13,7 @@ pipeline {
                   stage('docker build'){                          
                          agent {
                                    docker { 
-                                           label 'DIND'
+                                           image 'docker:dind'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'                                           
                                            
                             }
