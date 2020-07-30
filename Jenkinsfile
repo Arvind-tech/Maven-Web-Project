@@ -15,7 +15,7 @@ pipeline {
                                    docker { 
                                            image 'docker:dind'
                                            args '-v /var/run/docker.sock:/var/run/docker.sock'
-                                           command '['docker', 'run', '--rm', '-d', '--privileged', 'docker:dind', '80:80', 'httpd:latest']'
+                                           command 'docker exec -it $(docker ps -ql) /bin/sh'
                                            
                             }
                          }
