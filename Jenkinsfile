@@ -23,17 +23,8 @@ pipeline {
       
                           //sh 'docker version' 
                           sh 'docker exec --tty $(docker ps -ql) sh -c "mkdir -p /etc/docker"' 
-                          sh 'docker exec --tty $(docker ps -ql) sh -c "mkdir -p /root/.docker"'
-                          sh '''
-                               set +x
-                               docker exec --tty $(docker ps -ql) sh -c "cat <<EOF > /etc/docker/daemon.json
-                               {
-                                           "insecure-registries": [
-                                             "ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123"
-                                           ]
-                               }"                                                              
-                               
-                            ''' 
+                          sh 'docker exec --tty $(docker ps -ql) sh -c "mkdir -p /root/.docker"'                                                       
+                          sh 'docker exec --tty $(docker ps -ql) sh -c "cat <<EOF > /etc/docker/daemon.json{"insecure-registries": ["ec2-52-39-183-6.us-west-2.compute.amazonaws.com:8123"]}"'           
                            sh 'docker exec --tty $(docker ps -ql) sh -c "cat /etc/docker/daemon.json"'
                            sh 'docker exec --tty $(docker ps -ql) sh -c "cat <<EOF > /root/.docker/config.json{}"'
                            sh 'docker exec --tty $(docker ps -ql) sh -c "ls /root/.docker"'
