@@ -1,2 +1,2 @@
-FROM ubuntu:18.04
+FROM scratch
 MAINTAINER Arvind
