@@ -1,7 +1,7 @@
 pipeline {
        agent {label 'jenkins-docker-slave'}
               stages{             
-                  stage('maven version'){ 
+                  /*stage('maven version'){ 
                          agent {docker { image 'maven:latest'}}                                                         
                      steps{
                         script{                              
@@ -9,7 +9,7 @@ pipeline {
                                }           
                           
                          }
-                   }
+                   }*/
                   stage('docker build'){                          
                          agent {
                                    docker { 
